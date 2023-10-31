@@ -45,3 +45,9 @@
 | [Floating in Delirium](tasks/ppc/floating_in_delirium) | misc | [@falamous](https://github.com/falamous) |
 | [checkpoint](tasks/ppc/checkpoint) | ppc | [@renbou](https://github.com/renbou) |
 | [slons](tasks/ppc/slons) | ppc | [@Slonser](https://github.com/Slonser)|
+
+# Таски от партнера - Positive Technologies
+
+[Mystery_ldap](tasks/pt/Mystery_ldap/)
+[NFS](tasks/pt/NFS/)
+[stealer](tasks/pt/stealer/)
