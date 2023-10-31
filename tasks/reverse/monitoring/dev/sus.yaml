@@ -1,0 +1,46 @@
+transforms:
+  obfuscateNames: true
+  obfuscateBooleans: true
+
+  keyObfuscationLevel: 3
+  stringObfLevel: 3
+  numberObfLevel: 3
+  stringArrObfLevel: 3
+
+  checkNumbers: true
+
+  extractStringsToArray: true
+  addFakeStringsToArray: true
+
+  ignore: []
+
+  webMode: false
+  noES2021Syntax: false
+
+format:
+  amogus:
+    start: true
+    end: false
+
+  epicEndArt: true
+
+  lineStart: "megalith?"
+  lineEnd: "megasus."
+
+  removeEmptyLines: true
+  shrink: false
+  commentFrequency: 3
+  comments:
+    [
+      "Arbalest",
+      "Megalith",
+      "C4T BuT SUS",
+      "Metra Veehkim",
+      "Literally 1984",
+      "Сус Амогус",
+      "sussy ahh hell",
+    ]
+
+input:
+  esVersion: 2023
+  seed: "1337"

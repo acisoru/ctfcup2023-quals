@@ -1,0 +1,31 @@
+{{set . "section" "page.Share.title"}}
+{{set . "route" (url "News.Share")}}
+{{template "header.html" .}}
+
+<script>
+	function onSubmit(token) {
+		document.getElementById("shareForm").submit();
+	}
+</script>
+
+<main class="px-4 max-w-screen-2xl mx-auto my-8 font-serif">
+  <div class="text-center text-2xl font-medium">
+    <em>{{msg . "page.Share.content.welcome"}}</em>
+  </div>
+  <form id="shareForm" method="post" class="max-w-3xl mx-auto my-6 flex flex-col gap-4">
+    <div>
+      <label for="title" class="block px-1">{{msg . "page.Share.content.title"}}</label>
+      <input id="title" name="title" type="text" required minlength="10" maxlength="200" placeholder='{{msg . "page.Share.content.title.placeholder"}}' value="{{.title}}" class="block px-1 text-2xl w-full outline rounded-sm outline-1 outline-zinc-100 focus:outline-zinc-200" />
+    </div>
+    <div>
+      <label for="content" class="block px-1">{{msg . "page.Share.content.content"}}</label>
+      <textarea id="content" name="content" required rows="10" minlength="50" maxlength="1000" placeholder='{{msg . "page.Share.content.content.placeholder"}}' class="block px-1 text-lg w-full outline rounded-sm outline-1 outline-zinc-100 focus:outline-zinc-200">{{.content}}</textarea>
+    </div>
+    <button data-sitekey="6LdmMNgoAAAAAP6_SziU66EKrbu3RvOHaxZjBNFY" data-callback="onSubmit" class="g-recaptcha self-end px-2 py-1 bg-zinc-50 hover:bg-zinc-100 rounded-sm transition-colors">{{msg . "page.Share.content.submit"}}</button>
+    {{if and .submitted (not .error)}}
+    <div class="self-center text-center font-bold text-lg">{{msg . "page.Share.content.thanks"}}</div>
+    {{end}}
+  </form>
+</main>
+
+{{template "footer.html" .}}

@@ -1,0 +1,80 @@
+services:
+  service:
+    build: ./service
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 512M
+    volumes:
+      - news-storage:/news
+      - admin-secret:/service/admin-secret
+    environment:
+      STORAGE_DIR: /news
+      REDIS_ADDR: "redis:6379"
+      ADMIN_TOKEN_FILE: /service/admin-secret/admin-token
+    ports:
+      - "8081:9000"
+    depends_on:
+      redis:
+        condition: service_healthy
+      bot:
+        condition: service_started
+    restart: unless-stopped
+  cleaner:
+    image: c4tbuts4d/dedcleaner:latest
+    restart: unless-stopped
+    volumes:
+      - news-storage:/news
+    environment:
+      - DELETE_AFTER=30m
+      - SLEEP=5m
+      - DIRS=/news
+  bot:
+    build: ./bot
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1G
+    volumes:
+      - admin-secret:/bot/admin-secret
+    environment:
+      TASK_URL: http://service:9000
+      REDIS_URL: redis://redis:6379
+      ADMIN_TOKEN_FILE: /bot/admin-secret/admin-token
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+  files:
+    image: nginx:1.25.3-alpine3.18
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 128M
+    volumes:
+      - ./files/nginx.conf:/etc/nginx/conf.d/default.conf
+    secrets:
+      - source: novosti-flag
+        target: /static/flag
+    restart: unless-stopped
+  redis:
+    image: redis:7.2.2-alpine3.18
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 512M
+    healthcheck:
+      test: redis-cli ping
+      interval: 5s
+      timeout: 3s
+    restart: unless-stopped
+secrets:
+  novosti-flag:
+    environment: NOVOSTI_FLAG
+volumes:
+  news-storage:
+  admin-secret:

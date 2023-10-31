@@ -1,0 +1,5 @@
+GET / News.Share
+POST / News.Share
+GET /news/:id Admin.View
+GET /public/*filepath Static.Serve("public")
+GET /favicon.ico 404

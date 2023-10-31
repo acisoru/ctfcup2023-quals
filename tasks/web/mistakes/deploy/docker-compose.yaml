@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  api-server:
+    build:
+      context: ./api-server
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: production
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: example_password
+      MONGO_DB: my_database
+      SECRET_KEY: You_can't_guess_this
+      STATIC_BASE: http://static-server:3000
+      FLAG: ctfcup{380f99f77826f5fc0af980915f9c375d}
+
+  static-server:
+    build:
+      context: ./static-server
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      API_BASE: http://api-mistakes-4a27e2504ec596fe.ctfcup-2023.ru
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example_password
+      MONGO_INITDB_DATABASE: my_database

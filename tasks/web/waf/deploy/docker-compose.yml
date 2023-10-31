@@ -1,0 +1,9 @@
+services:
+  waf:
+    platform: linux/amd64
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/web-waf:latest"
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - FLAG=ctfcup{example}

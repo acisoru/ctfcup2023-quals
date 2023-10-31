@@ -1,0 +1,16 @@
+services:
+  monitoring:
+    platform: linux/amd64
+    build: .
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/rev-monitoring:latest"
+    init: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "512M"
+    ports:
+      - 1984:1984
+    environment:
+      FLAG: ctfcup{example}
+    restart: unless-stopped

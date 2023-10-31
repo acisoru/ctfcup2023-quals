@@ -1,0 +1,215 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+form {
+    margin-bottom: 20px;
+    background-color: #666;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+
+input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: #444;
+    color: #fff;
+}
+
+input:focus, button:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button {
+    background-color: #666;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #888;
+}
+
+iframe {
+    width: 100%;
+    height: 60px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#posts {
+    border: 1px solid #999;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #666;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+
+#posts div {
+    border-bottom: 1px solid #999;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#posts div:hover {
+    background-color: #555;
+}
+
+#posts button {
+    margin-top: 10px;
+}
+
+#createPost {
+    background-color: #28a745;
+    transition: background-color 0.3s;
+}
+
+#createPost:hover {
+    background-color: #218838;
+}
+
+#registerFrame, #oauthFrame {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#registerFrame, #oauthFrame, form {
+    transition: transform 0.3s;
+}
+
+#registerFrame {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.showRegisterForm #registerFrame {
+    max-height: 200px;
+}
+
+.showRegisterForm #oauthFrame {
+    transform: translateY(50%);
+}
+
+#createPostForm {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.showCreatePostForm #createPostForm {
+    max-height: 200px;
+}
+
+.showCreatePostForm #posts {
+    transform: translateY(50%);
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #333;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid #666;
+}
+
+.sidebar ul li:last-child {
+    border-bottom: none;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-header h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.chat-messages {
+    background-color: #333;
+    padding: 10px;
+    min-height: 300px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+.chat-input button {
+    padding: 8px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#leaveGroup {
+    background-color: #ff5722;
+}

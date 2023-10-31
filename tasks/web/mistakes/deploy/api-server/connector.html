@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connector</title>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const accessToken = urlParams.get('access-token');
+
+        const apiUrl = `/${urlParams.get('url')}`;
+        const fetchParams = {
+            method: urlParams.get('method'),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${accessToken}`
+            }
+        }
+        if(fetchParams.method != "GET")
+            fetchParams.body = urlParams.get('body');
+        fetch(apiUrl,fetchParams)
+        .then(response => response.json())
+        .then(data => {
+            window.parent.postMessage( data, '*');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    </script>
+</body>
+</html>

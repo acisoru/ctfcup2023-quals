@@ -1,0 +1,14 @@
+version: "2.4"
+services:
+  delirium:
+    build: .
+    platform: linux/amd64
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/ppc-delirium:latest"
+    ports:
+      - "2112:2112"
+    restart: unless-stopped
+    cpus: 1
+    pids_limit: 64
+    mem_limit: 512m
+    environment:
+      - FLAG=ctfcup{fdb70d58efd1fa3c38a10e0a76369a17}

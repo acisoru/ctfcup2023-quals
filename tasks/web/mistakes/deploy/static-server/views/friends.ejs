@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Management</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <h1>Friendship Management</h1>
+
+    <h2>Send Friend Request</h2>
+    <input type="text" id="targetUserId" placeholder="Target User ID">
+    <button onclick="sendFriendRequest(document.getElementById('targetUserId').value)">Send Request</button>
+
+    <h2>Block User</h2>
+    <input type="text" id="blockUserId" placeholder="User ID to Block">
+    <button onclick="blockUser(document.getElementById('blockUserId').value)">Block User</button>
+
+    <h2>Unblock User</h2>
+    <input type="text" id="unblockUserId" placeholder="User ID to Unblock">
+    <button onclick="unblockUser(document.getElementById('unblockUserId').value)">Unblock User</button>
+
+    <h2>Remove Friend</h2>
+    <input type="text" id="removeFriendUserId" placeholder="Friend's User ID">
+    <button onclick="removeFriend(document.getElementById('removeFriendUserId').value)">Remove Friend</button>
+    <div id="friendsList"></div>
+    <script src="/js/friends.js"></script>
+    <script src="/js/responseHandler.js"></script>
+    <script src="/js/settings.js"></script>
+
+    <script>getFriends();</script>
+</body>
+</html>

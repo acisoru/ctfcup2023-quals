@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../fonts/CormorantGaramond-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.icon-ru {
+  background-image: url("../img/flag-ru.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 100%;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.icon-uk {
+  background-image: url("../img/flag-uk.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 100%;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

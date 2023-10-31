@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{msg . "app.title"}} - {{msg . .section}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/public/dist/css/main.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+  <header class="px-4 max-w-screen-xl mx-auto">
+    <a href="{{.route}}" class="py-12 font-serif bg-gradient-to-r from-transparent from-0% via-amber-50 to-100% flex justify-center">
+      <h1 class="font-medium text-4xl">{{msg . "app.title"}} <span class="font-bold text-5xl">/ {{msg . .section}}</span></h1>
+    </a>
+    <hr class="border-zinc-200" />
+  </header>
+  <div class="fixed top-4 left-4">
+    <button id="set-locale-ru" class="icon-ru border border-gray-400 inline-block"></button>
+    <button id="set-locale-en" class="icon-uk border border-gray-400 inline-block"></button>
+  </div>
+  {{if .error}}
+  <div class="fixed top-4 right-4 w-56 px-4 py-2 bg-red-100 border rounded-sm border-red-500 text-center text-red-700">{{.error}}</div>
+  {{end}}

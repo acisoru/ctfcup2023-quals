@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <h1>Settings</h1>
+
+    <form id="settingsForm">
+        <label for="userTheme">Select Theme:</label>
+        <select id="userTheme" name="userTheme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+        <br>
+
+        <label for="emailNotifications">Email Notifications:</label>
+        <input type="checkbox" id="emailNotifications" name="emailNotifications">
+        <br>
+
+        <label for="profileVisibility">Profile Visibility:</label>
+        <select id="profileVisibility" name="profileVisibility">
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Save Settings">
+    </form>
+    <script src="/js/responseHandler.js"></script>
+    <script src="/js/settings.js"></script>
+    <script>initForm()</script>
+</body>
+</html>

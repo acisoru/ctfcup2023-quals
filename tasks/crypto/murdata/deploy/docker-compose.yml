@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    platform: linux/amd64
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/crp-murdata:latest"
+    ports:
+      - "8008:80"
+    restart: unless-stopped
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 128
+    environment:
+      - "FLAG=ctfcup{example}"

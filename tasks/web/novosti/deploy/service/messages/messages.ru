@@ -1,0 +1,12 @@
+app.title = Новости
+app.error.share = Возникла ошибка при обработке вашей истории! Пожалуйста, обратитесь к администраторам сервиса.
+app.error.captcha = Пожалуйста, заполните reCAPTCHA перед тем, как посылать новость на оценку.
+page.Share.title = Поделиться
+page.Share.content.welcome= С нетерпением ждём от Вас интересных историй и рассказов!
+page.Share.content.title = Название
+page.Share.content.title.placeholder = Моя классная история
+page.Share.content.content = Содержание
+page.Share.content.content.placeholder = Краткий пересказ Вашей новости…
+page.Share.content.submit = Отправить на оценку
+page.Share.content.thanks = Спасибо большое за то, что поделились,<br>мы постараемся просмотреть вашу новость как можно скорее!
+page.Suggestions.title = Предложенное

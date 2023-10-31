@@ -1,0 +1,19 @@
+FROM node:21.1.0-alpine3.18
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+ENV NODE_ENV="production"
+
+WORKDIR /sus
+
+COPY sus .
+COPY index.ts .
+COPY sus.yaml .
+
+RUN --mount=type=cache,target=/root/.npm \
+  npm install -g pnpm
+RUN --mount=type=cache,target=/pnpm/store \
+  pnpm install --prod --frozen-lockfile
+
+RUN pnpm exec tsc || exit 0
+RUN node out/main.js -i index.ts -o obfuscated.sus -c sus.yaml

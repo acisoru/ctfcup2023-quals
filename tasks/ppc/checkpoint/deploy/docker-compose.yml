@@ -1,0 +1,14 @@
+services:
+  checkpoint:
+    build: .
+    init: true
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "512M"
+    ports:
+      - 24242:24242
+    environment:
+      FLAG: ctfcup{example}
+    restart: unless-stopped

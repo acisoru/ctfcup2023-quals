@@ -1,0 +1,9 @@
+{
+  "name": "bot",
+  "author": "renbou",
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^21.4.1",
+    "redis": "^4.6.10"
+  }
+}

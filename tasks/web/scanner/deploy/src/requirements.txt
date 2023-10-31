@@ -1,0 +1,11 @@
+aiohttp==3.8.5
+celery==5.3.4
+fastapi==0.103.1
+requests==2.31.0
+uvicorn==0.23.2
+yarl==1.9.2
+redis~=5.0.1
+pydantic-settings==2.0.3
+pydantic_core==2.10.1
+pydantic==2.4.1
+

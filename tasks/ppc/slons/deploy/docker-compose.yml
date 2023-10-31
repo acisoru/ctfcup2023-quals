@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - FLAG=ctfcup{a51c8cc4d131a6cbe54bfce654fa9c81}
+      - KEY=ABOBUSAMOGUS??133asfvkabsfljvjawulrihfbjwafkklwabjdfk

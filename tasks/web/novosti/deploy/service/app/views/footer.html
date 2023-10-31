@@ -1,0 +1,18 @@
+  <script>
+    "use strict";
+
+    // set locale cookie via JS to avoid open redirect vulnerabilites
+    // which can occur when implementing a back/next URL on a /locale endpoint
+    function setLocale(locale) {
+      document.cookie = `NOVOSTI_LANG=${locale}; Path=/; SameSite=Lax`;
+      location.reload();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      for (const [id, locale] of [["set-locale-ru", "ru-RU"], ["set-locale-en", "en-GB"]]) {
+        document.getElementById(id).addEventListener("click", () => setLocale(locale));
+      }
+    })
+  </script>
+  </body>
+</html>

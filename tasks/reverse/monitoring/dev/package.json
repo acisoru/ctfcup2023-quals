@@ -1,0 +1,13 @@
+{
+  "name": "monitoring",
+  "author": "renbou",
+  "module": "index.ts",
+  "type": "commonjs",
+  "devDependencies": {
+    "bun-types": "latest",
+    "sus-obfuscator": "^2.5.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

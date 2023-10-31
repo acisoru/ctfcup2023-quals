@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Application</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>Main Application</h1>
+    <button onclick="window['openedWindow'] = window.open('<%= BASE %>/login','popup')">Login</button>
+    <button onclick="window['openedWindow'] = window.open('<%= BASE %>/register','popup')">Register</button>
+    <button><a href="/post">My Posts</a></button>
+    <button><a href="/friends">Friends</a></button>
+    <button><a href="/settings">Settings</a></button>
+    <script src="/js/responseHandler.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

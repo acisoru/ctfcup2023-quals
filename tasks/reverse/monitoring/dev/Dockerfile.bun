@@ -1,0 +1,11 @@
+FROM oven/bun:1.0.7-alpine
+
+ENV NODE_ENV="production"
+
+WORKDIR /monitoring
+
+COPY package.json bun.lockb monitoring.js dist/obfuscated.sus .
+
+RUN --mount=type=cache,target=/root/.cache/.bun \
+    --mount=type=cache,target=/root/.bun/install/cache \
+  bun install && bun build monitoring.js --minify --compile --outfile monitoring

@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  pwn:
+    build: .
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/pwn-spy:latest"
+    ports:
+      - "13000:13000"
+    restart: unless-stopped
+    cpus: 1
+    pids_limit: 64
+    mem_limit: 512m
+    environment:
+      - FLAG=ctfcup{flag}

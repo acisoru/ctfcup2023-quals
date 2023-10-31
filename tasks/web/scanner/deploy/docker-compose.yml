@@ -1,0 +1,11 @@
+version: "2.4"
+services:
+  web-scanner:
+    platform: linux/amd64
+    build: .
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/web-scanner:latest"
+    ports:
+      - "5050:5000"
+    restart: unless-stopped
+    environment:
+      - "FLAG=ctfcup{example}"

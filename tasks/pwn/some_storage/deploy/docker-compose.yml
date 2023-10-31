@@ -1,0 +1,15 @@
+version: "2.4"
+
+services:
+  pwn:
+    build: .
+    platform: linux/amd64
+    image: "cr.yandex/crp56e8fvolm1rqugnkf/pwn-some-storage:latest"
+    ports:
+      - "13002:13002"
+    restart: unless-stopped
+    cpus: 1
+    pids_limit: 64
+    mem_limit: 512m
+    environment:
+      - FLAG=ctfcup{flag}
